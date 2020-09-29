@@ -360,7 +360,33 @@ int main()
                 cin >> b;
                 cout << "Ingrese la longitud del tercer lado: ";
                 cin >> num3;
+                if ((a+b)>num3 && (a+num3)>b && (b+num3)>a)
+                {
+                    if (a==b || a==num3)
+                    {
+                        if (b==num3) cout << "Se forma un triangulo equilatero." << endl;
+                        else cout << "Se forma un triangulo isosceles." << endl;
+                    }
+                    else if (b==num3) cout << "Se forma un triangulo isosceles." << endl;
+                    else cout << "Se forma un triangulo escaleno." << endl;
+                }
+                else cout << "Las longitudes ingresadas no forman un triangulo." << endl;
+                break;
 
+                case 27:
+                /* Escriba un programa que actúe como una calculadora con operaciones de suma, resta, multiplicación y división, el usuario debe ingresar los operandos y la operación a realizar. */
+                cout << "Ingrese numero: ";
+                cin >> a;
+                cout << "Ingrese operador: ";
+                cin >> j;
+                cout << "Ingrese numero: ";
+                cin >> b;
+                resultado=int(j);
+                if (resultado==43) cout << a << j << b << "=" << (a+b) << endl;
+                else if (resultado==45) cout << a << j << b << "=" << (a-b) << endl;
+                else if (resultado==42) cout << a << j << b << "=" << (a*b) << endl;
+                else if (resultado==47) cout << a << j << b << "=" << (a/b) << endl;
+                else cout << "Operacion no valida." << endl;
                 break;
             }
         break;
