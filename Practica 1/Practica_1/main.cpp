@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
@@ -388,6 +389,67 @@ int main()
                 else if (resultado==47) cout << a << j << b << "=" << (a/b) << endl;
                 else cout << "Operacion no valida." << endl;
                 break;
+
+                case 28:
+                /* Escriba un programa que encuentre el valor aproximado de pi en base a la siguiente suma infinita: */
+                cout << "Ingrese el numero para la aproximacion de pi: ";
+                cin >> a;
+                resultado2=0;
+                for (int i=1;a>0;a--, i+=2)
+                {
+                    if ((a%2)==0) resultado2-=(1/float(i));
+                    else resultado2+=(1/float(i));
+                }
+                cout << "pi es aproximadamente: " << (4*resultado2) << endl;
+                break;
+
+                case 29:
+                /* Escriba un programa que adivine un número A (entre 0 y 100) seleccionado por el
+                usuario (el número NO se ingresa al programa), el programa imprimirá en pantalla un número B y
+                el usuario usará los símbolos '>', '<' y '=' para indicarle al programa si B es mayor, menor o igual
+                que A. El programa imprimira un nuevo número B, con base en simbolo ingresado por el usuario, y
+                repetira el proceso hasta acertar el número seleccionado por usuario. */
+                pal=true;
+                a=0;
+                num3=a;
+                num4=100;
+                while (pal)
+                {
+                    cout << "El numero seleccionado es " << a << "?";
+                    cin >> j;
+                    b=int(j);
+                    if (b==61)
+                    {
+                        cout << "Gracias por participar." << endl;
+                        pal=false;
+                    }
+                    else if (b==62) num3=a;
+                    else if (b==60) num4=a;
+                    a=(num3+num4)/2;
+                }
+                break;
+
+                case 30:
+                /* Escriba un programa que genere un número aleatorio A (entre 0 y 100) y le pida al
+                usuario que lo adivine, el usuario ingresa un número B y el programa le dirá si B es mayor o menor
+                que A, esto se repetirá hasta que el usuario adivine el número, en ese momento el programa le dirá
+                el número de intentos que tardo el usuario en adivinar el número. */
+                a=rand()%101;
+                pal=true;
+                for (int i=1; pal==true; i++)
+                {
+                    cout << "Cual crees que es el numero oculto: ";
+                    cin >> b;
+                    if (b==a)
+                    {
+                        cout << b << " era el numero oculto. Felicidades!. Fueron " << i << " intentos" << endl;
+                        pal=false;
+                    }
+                    else if (b<a) cout << "El numero oculto es mayor al que ingresaste." << endl;
+                    else cout << "El numero oculto es menor al que ingresaste." << endl;
+                }
+                break;
+
             }
         break;
 
