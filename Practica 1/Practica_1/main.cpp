@@ -449,7 +449,6 @@ int main()
                     else cout << "El numero oculto es menor al que ingresaste." << endl;
                 }
                 break;
-
             }
         break;
 
@@ -458,15 +457,90 @@ int main()
             cin >> a;
             switch (a) {
                 case 1:
-                    cout << "Ingrese el caracter; ";
+                    cout << "Ingrese el caracter: ";
                     cin>> j;
                     a = int(j);
                     if ((a>=65 && a <=90)||(a>=97 && a<=122)){
-                        if (a==65 || a ==69 || a==73 || a==79 || a==85) cout << "Es una vocal mayuscula"<< endl;
-                        else if (a==97 || a==101 || a==105 || a==111 || a==117) cout << "Es una vocal minuscula" << endl;
-                        else cout << "Es una consonante" << endl;
+                        if (a==65 || a ==69 || a==73 || a==79 || a==85) cout << j << " es una vocal mayuscula"<< endl;
+                        else if (a==97 || a==101 || a==105 || a==111 || a==117) cout << j<< " es una vocal minuscula" << endl;
+                        else cout << j << " es una consonante" << endl;
                     }
                     else cout << "No es una letra" << endl;
+                break;
+
+                case 2:
+                /* Se necesita un programa que permita determinar la mínima combinación de billetes
+                y monedas para una cantidad de dinero determinada. Los billetes en circulación son de $50.000,
+                $20.000, $10.000, $5.000, $2.000 y $1.000, y las monedas son de $500, $200, $100 y $50.
+                Hacer un programa que entregue el número de billetes y monedas de cada denominación para completar
+                la cantidad deseada. Si por medio de los billetes y monedas disponibles no se puede lograr la
+                cantidad deseada, el sistema deberá decir lo que resta para lograrla. */
+                cout << "Ingrese el valor al cual le desea ver la combinacion: ";
+                cin >> a;
+                num4=1000;
+                for (b=10000;b>=10; b=b/10)
+                {
+                    for(num3=5;(num3>=1) && ((num3*b)>=50);num3--)
+                    {
+                        num4=a/(num3*b);
+                        a=a%(num3*b);
+                        cout << (num3*b) << " : " << num4 << endl;
+                        if (num3==5) num3-=2;
+                    }
+                }
+                cout << "Faltante: " << a << endl;
+                break;
+
+                case 3:
+                /* Escriba un programa que debe leer un mes y un día de dicho mes para luego decir
+                si esa combinación de mes y día son válidos. El caso más especial es el 29 de febrero, en dicho caso
+                imprimir posiblemente año bisiesto". */
+                cout << "Ingrese el mes que desea validar (1-12): ";
+                cin >> a;
+                if (a>=1 && a<=12)
+                {
+                    cout << "Ingrese el dia a validar: ";
+                    cin >> b;
+                    if (b<31)
+                    {
+                        if (a==2 && b==29) cout << b << "/" << a << " es valida en bisiesto." << endl;
+                        else cout << b << "/" << a << " es una fecha valida." << endl;
+                    }
+                    else if (b==31)
+                    {
+                        if (a!=4 && a!=6 && a!=9 && a!=11) cout << b << "/" << a << " es una fecha valida." << endl;
+                        else cout << b << "/" << a << " es una fecha invalida." << endl;
+                    }
+                    else cout << b << "/" << a << " es una fecha invalida." << endl;
+
+                }
+                else cout << a << " es un mes invalido." << endl;
+                break;
+
+                case 4:
+                /* Escriba un programa para leer dos números enteros con el siguiente significado: el
+                valor del primer número representa una hora del día en un reloj de 24 horas, de modo que 1245
+                representa las doce y cuarenta y cinco de la tarde. El segundo entero representa un tiempo de duraci
+                ón de la misma manera, por lo que 345 representa tres horas y 45 minutos. El programa debe
+                sumar esta duración primer número, y el resultado será impreso en la misma notación, en este caso
+                1630, que es el tiempo de 3 horas y 45 minutos después de 12:45. */
+                cout << "Ingrese la hora del dia (HHmm): ";
+                cin >> a;
+                num3=a%100;
+                a=a/100;
+                if ((num3<0 && num3>59)||(a<1 && a>24))
+                {
+
+                }
+                cout << "Ingrese el tiempo de duracion (HHmm): ";
+                cin >> b;
+                num4=b%100;
+                num3=(num3+num4);
+
+                b=b/100;
+                a=a+b+(num3/60);
+                num3=(num3%60);
+                cout << "La hora es " << a << num3 << endl;
                 break;
             }
          break;
