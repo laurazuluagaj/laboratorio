@@ -528,19 +528,161 @@ int main()
                 cin >> a;
                 num3=a%100;
                 a=a/100;
-                if ((num3<0 && num3>59)||(a<1 && a>24))
+                if (num3<0 || num3>59 || a<1 || a>24)
                 {
-
+                    cout << a << num3 << " es un tiempo invalido." << endl;
                 }
                 cout << "Ingrese el tiempo de duracion (HHmm): ";
                 cin >> b;
                 num4=b%100;
-                num3=(num3+num4);
-
                 b=b/100;
+                if (num4<0 || num4>59 || b<1 || b>24)
+                {
+                    cout << b << num4 << " es un tiempo invalido." << endl;
+                }
+                num3=(num3+num4);
                 a=a+b+(num3/60);
                 num3=(num3%60);
+                if (a>24) a-=24;
                 cout << "La hora es " << a << num3 << endl;
+                break;
+
+                case 5:
+                /* Escriba un programa que muestre un rombo en la pantalla: */
+                cout << "Ingrese un numero impar para la longitud: ";
+                cin >> a;
+                fil=1;
+                col=1;
+                b=(a/2)+1;
+                num3=b;
+                for(;fil<=a; fil++)
+                {
+                    for (col=1;col<=a;col++)
+                    {
+                        if (col>=b && col<=num3) cout << "*";
+                        else cout << " ";
+                    }
+                    cout << endl;
+                    if (fil>=(a/2)+1)
+                    {
+                        b++;
+                        num3--;
+                    }
+                    else
+                    {
+                       b--;
+                       num3++;
+                    }
+                }
+                break;
+
+                case 6:
+                /* Escriba un programa que encuentre el valor aproximado del número de euler en base
+                a la siguiente suma infinita: El usuario debe ingresar el número de elementos usados en la aproximación.*/
+                cout << "Ingrese el numero de elementos para hacer la aproximacion: ";
+                cin >> a;
+                resultado2=0;
+                for (int i=0 ;a>0;a--, i++)
+                {
+                    num1=1;
+                    for (int c=1;c<=i;c++) num1=(num1*c);
+                    resultado2+=(1/num1);
+                }
+                cout << "e es aproximadamente: " << resultado2 << endl;
+                break;
+
+                case 7:
+                /* En la serie de Fibonacci, cada número es la suma de los 2 anteriores e inicia con 1 y 1. */
+                cout << "Introduce numero mayor que 1: ";
+                cin >> a;
+                b=1;
+                num3=1;
+                resultado=0;
+                for(int i=2;i<=a && num3<a;i++)
+                {
+                    num3 = b + num3;
+                    b = num3 - b;
+                    if ((num3%2)==0) resultado+=num3;
+                }
+                cout << "El resultado de la suma es: " << resultado << endl;
+
+                break;
+
+                case 8:
+                /* Escriba un programa que reciba 3 números a, b, c, y calcule la suma de todos los
+                múltiplos de a y b que sean menores a c. Tenga en cuenta no sumar 2 veces los múltiplos comunes. */
+                cout << "Ingrese el primer numero: ";
+                cin >> a;
+                cout << "Ingrese el segundo numero: ";
+                cin >> b;
+                cout << "Ingrese el tercer numero: ";
+                cin >> num3;
+                resultado=0;
+                for (int i=1; (a*i)<num3; i++)
+                {
+                    resultado+=(a*i);
+                    cout << (a*i);
+                    if ((a*(i+1))<num3) cout << "+";
+                }
+                for (int i=1; (b*i)<num3; i++)
+                {
+                    cout << "+";
+                    if (((b*i)%a)!=0)
+                    {
+                        resultado+=(b*i);
+                        cout << (b*i);
+                    }
+                }
+                cout << " = " << resultado << endl;
+                break;
+
+                case 9:
+                /* Escriba un programa que pida un número entero N e imprima el resultado de la suma
+                de todos sus dígitos elevados a sí mismos. */
+                cout << "Ingrese un numero para la suma de sus digitos al cuadrado: ";
+                cin >> a;
+                resultado=0;
+                for (;a>0;a=(a/10))
+                {
+                    b=(a%10);
+                    num3=b;
+                    for (int i=1;i<b;i++) num3=num3*b;
+                    resultado+=num3;
+                }
+                cout << "El resultado de la suma es: " << resultado << endl;
+                break;
+
+                case 10:
+                /* Escriba un programa que reciba un número n e imprima el enésimo número primo. */
+                cout << "Ingrese un numero: ";
+                cin >> a;
+                b=1;
+                for (int i=1; i<=a;)
+                {
+                    b++;
+                    pal=true;
+                    for (int c=2;pal;c++)
+                    {
+                        if ((b%c)==0)
+                        {
+                            if (c==b) i++;
+                            pal=false;
+                        }
+                    }
+                }
+                cout << "El primo numero " << a << " es: " << b << endl;
+                break;
+
+                case 11:
+                /*Escriba un programa que reciba un número y calcule el mínimo común múltiplo de
+                todos los números enteros entre 1 y el número ingresado. */
+                cout << "Ingrese un numero para validar MCM: ";
+                cin >> a;
+                pal=true;
+                for (int i=1; pal; i++)
+                {
+
+                }
                 break;
             }
          break;
