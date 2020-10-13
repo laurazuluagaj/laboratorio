@@ -673,17 +673,21 @@ int main()
                 cout << "El primo numero " << a << " es: " << b << endl;
                 break;
 
-                case 11:
+                /*case 11:*/
                 /*Escriba un programa que reciba un número y calcule el mínimo común múltiplo de
                 todos los números enteros entre 1 y el número ingresado. */
-                cout << "Ingrese un numero para validar MCM: ";
+                /*cout << "Ingrese un numero para validar MCM: ";
                 cin >> a;
                 pal=true;
                 for (int i=1; pal; i++)
                 {
+                    b=(a*i);
+                    for (int c=(b-1);;)
+                    {
 
+                    }
                 }
-                break;
+                break; */
             }
          break;
         }
