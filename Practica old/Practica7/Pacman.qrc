@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/ImPacman">
+        <file>Images/right1.png</file>
+        <file>Images/right2.png</file>
+        <file>Images/icono.png</file>
+    </qresource>
+</RCC>

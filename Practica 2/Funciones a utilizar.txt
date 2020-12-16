@@ -1,0 +1,15 @@
+1- serial.available() Detectar si llego dato a puerto serial
+2-Serial.begin()
+3-Serial.parseFloat() Detectar un numero e interprte
+4- Serial.parseInt
+5- Serial.print() I primir
+6- Serial.println()
+7- Serial.read()
+8- Serial.readString()
+9- Serial.write()
+10- digitalWrite()
+11- pinMode()
+12- analogWrite()
+13- analogRead()
+14- digitalRead()
+15- millis() retorna valor en milisegundos desde que se inicio el programa
