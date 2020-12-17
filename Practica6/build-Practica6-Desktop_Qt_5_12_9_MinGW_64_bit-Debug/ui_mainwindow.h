@@ -12,9 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDoubleSpinBox>
-#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGraphicsView>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -31,14 +29,14 @@ public:
     QWidget *centralwidget;
     QLabel *label_8;
     QLabel *label_9;
-    QWidget *layoutWidget;
-    QHBoxLayout *Botones2;
-    QPushButton *BtnStart;
-    QPushButton *BtnStop;
     QGraphicsView *GvSimulador;
     QPushButton *BtnAceptar;
-    QWidget *layoutWidget1;
-    QVBoxLayout *Nombres;
+    QLabel *label;
+    QPushButton *BtnFinish;
+    QPushButton *BtnAdd;
+    QPushButton *BtnClean;
+    QPushButton *BtnStop;
+    QPushButton *BtnStart;
     QLabel *LblNombre;
     QLabel *LblMasa;
     QLabel *LblRadio;
@@ -46,33 +44,25 @@ public:
     QLabel *LblVely;
     QLabel *LblPosx;
     QLabel *LblPosy;
-    QWidget *layoutWidget2;
-    QVBoxLayout *Datos;
+    QLabel *LblCant;
+    QSpinBox *SboxCant;
     QLineEdit *LineNombre;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout;
     QDoubleSpinBox *SboxMasa;
     QDoubleSpinBox *SboxRadio;
     QDoubleSpinBox *SboxVelx;
     QDoubleSpinBox *SboxVely;
     QDoubleSpinBox *SboxPosx;
     QDoubleSpinBox *SboxPosy;
-    QWidget *layoutWidget3;
-    QFormLayout *Cuerpos;
-    QLabel *LblCant;
-    QSpinBox *SboxCant;
-    QWidget *layoutWidget4;
-    QHBoxLayout *Botones1;
-    QPushButton *BtnAdd;
-    QPushButton *BtnClean;
-    QLabel *label;
-    QPushButton *BtnFinish;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(959, 585);
-        MainWindow->setMinimumSize(QSize(959, 585));
-        MainWindow->setMaximumSize(QSize(1000, 585));
+        MainWindow->resize(1300, 700);
+        MainWindow->setMinimumSize(QSize(1300, 700));
+        MainWindow->setMaximumSize(QSize(1300, 585));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label_8 = new QLabel(centralwidget);
@@ -81,162 +71,110 @@ public:
         label_9 = new QLabel(centralwidget);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setGeometry(QRect(30, 39, 161, 16));
-        layoutWidget = new QWidget(centralwidget);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(30, 309, 158, 25));
-        Botones2 = new QHBoxLayout(layoutWidget);
-        Botones2->setObjectName(QString::fromUtf8("Botones2"));
-        Botones2->setContentsMargins(0, 0, 0, 0);
-        BtnStart = new QPushButton(layoutWidget);
-        BtnStart->setObjectName(QString::fromUtf8("BtnStart"));
-
-        Botones2->addWidget(BtnStart);
-
-        BtnStop = new QPushButton(layoutWidget);
-        BtnStop->setObjectName(QString::fromUtf8("BtnStop"));
-
-        Botones2->addWidget(BtnStop);
-
         GvSimulador = new QGraphicsView(centralwidget);
         GvSimulador->setObjectName(QString::fromUtf8("GvSimulador"));
-        GvSimulador->setGeometry(QRect(270, 10, 681, 561));
+        GvSimulador->setGeometry(QRect(280, 10, 1021, 761));
         BtnAceptar = new QPushButton(centralwidget);
         BtnAceptar->setObjectName(QString::fromUtf8("BtnAceptar"));
         BtnAceptar->setGeometry(QRect(180, 70, 75, 23));
-        layoutWidget1 = new QWidget(centralwidget);
-        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(30, 99, 84, 181));
-        Nombres = new QVBoxLayout(layoutWidget1);
-        Nombres->setObjectName(QString::fromUtf8("Nombres"));
-        Nombres->setContentsMargins(0, 0, 0, 0);
-        LblNombre = new QLabel(layoutWidget1);
-        LblNombre->setObjectName(QString::fromUtf8("LblNombre"));
-
-        Nombres->addWidget(LblNombre);
-
-        LblMasa = new QLabel(layoutWidget1);
-        LblMasa->setObjectName(QString::fromUtf8("LblMasa"));
-
-        Nombres->addWidget(LblMasa);
-
-        LblRadio = new QLabel(layoutWidget1);
-        LblRadio->setObjectName(QString::fromUtf8("LblRadio"));
-
-        Nombres->addWidget(LblRadio);
-
-        LblVelx = new QLabel(layoutWidget1);
-        LblVelx->setObjectName(QString::fromUtf8("LblVelx"));
-
-        Nombres->addWidget(LblVelx);
-
-        LblVely = new QLabel(layoutWidget1);
-        LblVely->setObjectName(QString::fromUtf8("LblVely"));
-
-        Nombres->addWidget(LblVely);
-
-        LblPosx = new QLabel(layoutWidget1);
-        LblPosx->setObjectName(QString::fromUtf8("LblPosx"));
-
-        Nombres->addWidget(LblPosx);
-
-        LblPosy = new QLabel(layoutWidget1);
-        LblPosy->setObjectName(QString::fromUtf8("LblPosy"));
-
-        Nombres->addWidget(LblPosy);
-
-        layoutWidget2 = new QWidget(centralwidget);
-        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(120, 99, 135, 178));
-        Datos = new QVBoxLayout(layoutWidget2);
-        Datos->setObjectName(QString::fromUtf8("Datos"));
-        Datos->setContentsMargins(0, 0, 0, 0);
-        LineNombre = new QLineEdit(layoutWidget2);
-        LineNombre->setObjectName(QString::fromUtf8("LineNombre"));
-
-        Datos->addWidget(LineNombre);
-
-        SboxMasa = new QDoubleSpinBox(layoutWidget2);
-        SboxMasa->setObjectName(QString::fromUtf8("SboxMasa"));
-        SboxMasa->setMinimum(-9999999.000000000000000);
-        SboxMasa->setMaximum(999999.989999999990687);
-
-        Datos->addWidget(SboxMasa);
-
-        SboxRadio = new QDoubleSpinBox(layoutWidget2);
-        SboxRadio->setObjectName(QString::fromUtf8("SboxRadio"));
-        SboxRadio->setMaximum(9999999.990000000223517);
-
-        Datos->addWidget(SboxRadio);
-
-        SboxVelx = new QDoubleSpinBox(layoutWidget2);
-        SboxVelx->setObjectName(QString::fromUtf8("SboxVelx"));
-        SboxVelx->setMinimum(-9999999.000000000000000);
-        SboxVelx->setMaximum(9999999.990000000223517);
-
-        Datos->addWidget(SboxVelx);
-
-        SboxVely = new QDoubleSpinBox(layoutWidget2);
-        SboxVely->setObjectName(QString::fromUtf8("SboxVely"));
-        SboxVely->setMinimum(-9999999.000000000000000);
-        SboxVely->setMaximum(99999999.989999994635582);
-
-        Datos->addWidget(SboxVely);
-
-        SboxPosx = new QDoubleSpinBox(layoutWidget2);
-        SboxPosx->setObjectName(QString::fromUtf8("SboxPosx"));
-        SboxPosx->setMinimum(-99999999.000000000000000);
-        SboxPosx->setMaximum(999999999.990000009536743);
-
-        Datos->addWidget(SboxPosx);
-
-        SboxPosy = new QDoubleSpinBox(layoutWidget2);
-        SboxPosy->setObjectName(QString::fromUtf8("SboxPosy"));
-        SboxPosy->setMinimum(-99999999.000000000000000);
-        SboxPosy->setMaximum(999999999.990000009536743);
-
-        Datos->addWidget(SboxPosy);
-
-        layoutWidget3 = new QWidget(centralwidget);
-        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(31, 70, 140, 22));
-        Cuerpos = new QFormLayout(layoutWidget3);
-        Cuerpos->setObjectName(QString::fromUtf8("Cuerpos"));
-        Cuerpos->setContentsMargins(0, 0, 0, 0);
-        LblCant = new QLabel(layoutWidget3);
-        LblCant->setObjectName(QString::fromUtf8("LblCant"));
-
-        Cuerpos->setWidget(0, QFormLayout::LabelRole, LblCant);
-
-        SboxCant = new QSpinBox(layoutWidget3);
-        SboxCant->setObjectName(QString::fromUtf8("SboxCant"));
-        SboxCant->setMinimum(1);
-
-        Cuerpos->setWidget(0, QFormLayout::FieldRole, SboxCant);
-
-        layoutWidget4 = new QWidget(centralwidget);
-        layoutWidget4->setObjectName(QString::fromUtf8("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(30, 279, 158, 25));
-        Botones1 = new QHBoxLayout(layoutWidget4);
-        Botones1->setObjectName(QString::fromUtf8("Botones1"));
-        Botones1->setContentsMargins(0, 0, 0, 0);
-        BtnAdd = new QPushButton(layoutWidget4);
-        BtnAdd->setObjectName(QString::fromUtf8("BtnAdd"));
-
-        Botones1->addWidget(BtnAdd);
-
-        BtnClean = new QPushButton(layoutWidget4);
-        BtnClean->setObjectName(QString::fromUtf8("BtnClean"));
-
-        Botones1->addWidget(BtnClean);
-
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(0, 340, 271, 231));
+        label->setGeometry(QRect(0, 370, 281, 331));
         label->setPixmap(QPixmap(QString::fromUtf8(":/Images/Inicio.jpg")));
         label->setScaledContents(true);
         BtnFinish = new QPushButton(centralwidget);
         BtnFinish->setObjectName(QString::fromUtf8("BtnFinish"));
         BtnFinish->setGeometry(QRect(190, 282, 75, 51));
+        BtnAdd = new QPushButton(centralwidget);
+        BtnAdd->setObjectName(QString::fromUtf8("BtnAdd"));
+        BtnAdd->setGeometry(QRect(31, 280, 75, 23));
+        BtnClean = new QPushButton(centralwidget);
+        BtnClean->setObjectName(QString::fromUtf8("BtnClean"));
+        BtnClean->setGeometry(QRect(112, 280, 75, 23));
+        BtnStop = new QPushButton(centralwidget);
+        BtnStop->setObjectName(QString::fromUtf8("BtnStop"));
+        BtnStop->setGeometry(QRect(112, 310, 75, 23));
+        BtnStart = new QPushButton(centralwidget);
+        BtnStart->setObjectName(QString::fromUtf8("BtnStart"));
+        BtnStart->setGeometry(QRect(31, 310, 75, 23));
+        LblNombre = new QLabel(centralwidget);
+        LblNombre->setObjectName(QString::fromUtf8("LblNombre"));
+        LblNombre->setGeometry(QRect(31, 100, 37, 16));
+        LblMasa = new QLabel(centralwidget);
+        LblMasa->setObjectName(QString::fromUtf8("LblMasa"));
+        LblMasa->setGeometry(QRect(31, 126, 25, 16));
+        LblRadio = new QLabel(centralwidget);
+        LblRadio->setObjectName(QString::fromUtf8("LblRadio"));
+        LblRadio->setGeometry(QRect(31, 153, 27, 16));
+        LblVelx = new QLabel(centralwidget);
+        LblVelx->setObjectName(QString::fromUtf8("LblVelx"));
+        LblVelx->setGeometry(QRect(31, 179, 82, 16));
+        LblVely = new QLabel(centralwidget);
+        LblVely->setObjectName(QString::fromUtf8("LblVely"));
+        LblVely->setGeometry(QRect(31, 206, 82, 16));
+        LblPosx = new QLabel(centralwidget);
+        LblPosx->setObjectName(QString::fromUtf8("LblPosx"));
+        LblPosx->setGeometry(QRect(31, 232, 75, 16));
+        LblPosy = new QLabel(centralwidget);
+        LblPosy->setObjectName(QString::fromUtf8("LblPosy"));
+        LblPosy->setGeometry(QRect(31, 259, 75, 16));
+        LblCant = new QLabel(centralwidget);
+        LblCant->setObjectName(QString::fromUtf8("LblCant"));
+        LblCant->setGeometry(QRect(32, 71, 99, 16));
+        SboxCant = new QSpinBox(centralwidget);
+        SboxCant->setObjectName(QString::fromUtf8("SboxCant"));
+        SboxCant->setGeometry(QRect(137, 71, 33, 20));
+        SboxCant->setMinimum(1);
+        LineNombre = new QLineEdit(centralwidget);
+        LineNombre->setObjectName(QString::fromUtf8("LineNombre"));
+        LineNombre->setGeometry(QRect(121, 100, 133, 20));
+        widget = new QWidget(centralwidget);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(121, 126, 131, 152));
+        verticalLayout = new QVBoxLayout(widget);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        SboxMasa = new QDoubleSpinBox(widget);
+        SboxMasa->setObjectName(QString::fromUtf8("SboxMasa"));
+        SboxMasa->setMinimum(-9999999.000000000000000);
+        SboxMasa->setMaximum(999999.989999999990687);
+
+        verticalLayout->addWidget(SboxMasa);
+
+        SboxRadio = new QDoubleSpinBox(widget);
+        SboxRadio->setObjectName(QString::fromUtf8("SboxRadio"));
+        SboxRadio->setMaximum(9999999.990000000223517);
+
+        verticalLayout->addWidget(SboxRadio);
+
+        SboxVelx = new QDoubleSpinBox(widget);
+        SboxVelx->setObjectName(QString::fromUtf8("SboxVelx"));
+        SboxVelx->setMinimum(-9999999.000000000000000);
+        SboxVelx->setMaximum(9999999.990000000223517);
+
+        verticalLayout->addWidget(SboxVelx);
+
+        SboxVely = new QDoubleSpinBox(widget);
+        SboxVely->setObjectName(QString::fromUtf8("SboxVely"));
+        SboxVely->setMinimum(-9999999.000000000000000);
+        SboxVely->setMaximum(99999999.989999994635582);
+
+        verticalLayout->addWidget(SboxVely);
+
+        SboxPosx = new QDoubleSpinBox(widget);
+        SboxPosx->setObjectName(QString::fromUtf8("SboxPosx"));
+        SboxPosx->setMinimum(-99999999.000000000000000);
+        SboxPosx->setMaximum(999999999.990000009536743);
+
+        verticalLayout->addWidget(SboxPosx);
+
+        SboxPosy = new QDoubleSpinBox(widget);
+        SboxPosy->setObjectName(QString::fromUtf8("SboxPosy"));
+        SboxPosy->setMinimum(-99999999.000000000000000);
+        SboxPosy->setMaximum(999999999.990000009536743);
+
+        verticalLayout->addWidget(SboxPosy);
+
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -249,9 +187,13 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         label_8->setText(QApplication::translate("MainWindow", "PRACTICA #6", nullptr));
         label_9->setText(QApplication::translate("MainWindow", "INGRESAR CUERPOS", nullptr));
-        BtnStart->setText(QApplication::translate("MainWindow", "Iniciar", nullptr));
-        BtnStop->setText(QApplication::translate("MainWindow", "Detener", nullptr));
         BtnAceptar->setText(QApplication::translate("MainWindow", "Aceptar", nullptr));
+        label->setText(QString());
+        BtnFinish->setText(QApplication::translate("MainWindow", "Finalizar", nullptr));
+        BtnAdd->setText(QApplication::translate("MainWindow", "Ingresar", nullptr));
+        BtnClean->setText(QApplication::translate("MainWindow", "Limpiar", nullptr));
+        BtnStop->setText(QApplication::translate("MainWindow", "Detener", nullptr));
+        BtnStart->setText(QApplication::translate("MainWindow", "Iniciar", nullptr));
         LblNombre->setText(QApplication::translate("MainWindow", "Nombre", nullptr));
         LblMasa->setText(QApplication::translate("MainWindow", "Masa", nullptr));
         LblRadio->setText(QApplication::translate("MainWindow", "Radio", nullptr));
@@ -260,10 +202,6 @@ public:
         LblPosx->setText(QApplication::translate("MainWindow", "Posici\303\263n X inicial", nullptr));
         LblPosy->setText(QApplication::translate("MainWindow", "Posici\303\263n Y inicial", nullptr));
         LblCant->setText(QApplication::translate("MainWindow", "Cantidad de cuerpos", nullptr));
-        BtnAdd->setText(QApplication::translate("MainWindow", "Ingresar", nullptr));
-        BtnClean->setText(QApplication::translate("MainWindow", "Limpiar", nullptr));
-        label->setText(QString());
-        BtnFinish->setText(QApplication::translate("MainWindow", "Finalizar", nullptr));
     } // retranslateUi
 
 };
