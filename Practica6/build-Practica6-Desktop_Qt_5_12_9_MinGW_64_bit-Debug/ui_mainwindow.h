@@ -47,7 +47,7 @@ public:
     QLabel *LblCant;
     QSpinBox *SboxCant;
     QLineEdit *LineNombre;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QDoubleSpinBox *SboxMasa;
     QDoubleSpinBox *SboxRadio;
@@ -55,6 +55,8 @@ public:
     QDoubleSpinBox *SboxVely;
     QDoubleSpinBox *SboxPosx;
     QDoubleSpinBox *SboxPosy;
+    QLabel *label_2;
+    QLineEdit *LineArchivo;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -79,7 +81,7 @@ public:
         BtnAceptar->setGeometry(QRect(180, 70, 75, 23));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(0, 370, 281, 331));
+        label->setGeometry(QRect(0, 410, 281, 291));
         label->setPixmap(QPixmap(QString::fromUtf8(":/Images/Inicio.jpg")));
         label->setScaledContents(true);
         BtnFinish = new QPushButton(centralwidget);
@@ -128,53 +130,59 @@ public:
         LineNombre = new QLineEdit(centralwidget);
         LineNombre->setObjectName(QString::fromUtf8("LineNombre"));
         LineNombre->setGeometry(QRect(121, 100, 133, 20));
-        widget = new QWidget(centralwidget);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(121, 126, 131, 152));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(121, 126, 131, 152));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        SboxMasa = new QDoubleSpinBox(widget);
+        SboxMasa = new QDoubleSpinBox(layoutWidget);
         SboxMasa->setObjectName(QString::fromUtf8("SboxMasa"));
         SboxMasa->setMinimum(-9999999.000000000000000);
         SboxMasa->setMaximum(999999.989999999990687);
 
         verticalLayout->addWidget(SboxMasa);
 
-        SboxRadio = new QDoubleSpinBox(widget);
+        SboxRadio = new QDoubleSpinBox(layoutWidget);
         SboxRadio->setObjectName(QString::fromUtf8("SboxRadio"));
         SboxRadio->setMaximum(9999999.990000000223517);
 
         verticalLayout->addWidget(SboxRadio);
 
-        SboxVelx = new QDoubleSpinBox(widget);
+        SboxVelx = new QDoubleSpinBox(layoutWidget);
         SboxVelx->setObjectName(QString::fromUtf8("SboxVelx"));
         SboxVelx->setMinimum(-9999999.000000000000000);
         SboxVelx->setMaximum(9999999.990000000223517);
 
         verticalLayout->addWidget(SboxVelx);
 
-        SboxVely = new QDoubleSpinBox(widget);
+        SboxVely = new QDoubleSpinBox(layoutWidget);
         SboxVely->setObjectName(QString::fromUtf8("SboxVely"));
         SboxVely->setMinimum(-9999999.000000000000000);
         SboxVely->setMaximum(99999999.989999994635582);
 
         verticalLayout->addWidget(SboxVely);
 
-        SboxPosx = new QDoubleSpinBox(widget);
+        SboxPosx = new QDoubleSpinBox(layoutWidget);
         SboxPosx->setObjectName(QString::fromUtf8("SboxPosx"));
         SboxPosx->setMinimum(-99999999.000000000000000);
         SboxPosx->setMaximum(999999999.990000009536743);
 
         verticalLayout->addWidget(SboxPosx);
 
-        SboxPosy = new QDoubleSpinBox(widget);
+        SboxPosy = new QDoubleSpinBox(layoutWidget);
         SboxPosy->setObjectName(QString::fromUtf8("SboxPosy"));
         SboxPosy->setMinimum(-99999999.000000000000000);
         SboxPosy->setMaximum(999999999.990000009536743);
 
         verticalLayout->addWidget(SboxPosy);
 
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(30, 350, 111, 16));
+        LineArchivo = new QLineEdit(centralwidget);
+        LineArchivo->setObjectName(QString::fromUtf8("LineArchivo"));
+        LineArchivo->setGeometry(QRect(30, 370, 221, 20));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -202,6 +210,8 @@ public:
         LblPosx->setText(QApplication::translate("MainWindow", "Posici\303\263n X inicial", nullptr));
         LblPosy->setText(QApplication::translate("MainWindow", "Posici\303\263n Y inicial", nullptr));
         LblCant->setText(QApplication::translate("MainWindow", "Cantidad de cuerpos", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "Nombre del archivo", nullptr));
+        LineArchivo->setText(QApplication::translate("MainWindow", "Data.txt", nullptr));
     } // retranslateUi
 
 };
