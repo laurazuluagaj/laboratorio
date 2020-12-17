@@ -64,6 +64,7 @@ public:
     QPushButton *BtnAdd;
     QPushButton *BtnClean;
     QLabel *label;
+    QPushButton *BtnFinish;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -82,7 +83,7 @@ public:
         label_9->setGeometry(QRect(30, 39, 161, 16));
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(50, 309, 158, 25));
+        layoutWidget->setGeometry(QRect(30, 309, 158, 25));
         Botones2 = new QHBoxLayout(layoutWidget);
         Botones2->setObjectName(QString::fromUtf8("Botones2"));
         Botones2->setContentsMargins(0, 0, 0, 0);
@@ -214,7 +215,7 @@ public:
 
         layoutWidget4 = new QWidget(centralwidget);
         layoutWidget4->setObjectName(QString::fromUtf8("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(50, 279, 158, 25));
+        layoutWidget4->setGeometry(QRect(30, 279, 158, 25));
         Botones1 = new QHBoxLayout(layoutWidget4);
         Botones1->setObjectName(QString::fromUtf8("Botones1"));
         Botones1->setContentsMargins(0, 0, 0, 0);
@@ -233,6 +234,9 @@ public:
         label->setGeometry(QRect(0, 340, 271, 231));
         label->setPixmap(QPixmap(QString::fromUtf8(":/Images/Inicio.jpg")));
         label->setScaledContents(true);
+        BtnFinish = new QPushButton(centralwidget);
+        BtnFinish->setObjectName(QString::fromUtf8("BtnFinish"));
+        BtnFinish->setGeometry(QRect(190, 282, 75, 51));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -259,6 +263,7 @@ public:
         BtnAdd->setText(QApplication::translate("MainWindow", "Ingresar", nullptr));
         BtnClean->setText(QApplication::translate("MainWindow", "Limpiar", nullptr));
         label->setText(QString());
+        BtnFinish->setText(QApplication::translate("MainWindow", "Finalizar", nullptr));
     } // retranslateUi
 
 };
