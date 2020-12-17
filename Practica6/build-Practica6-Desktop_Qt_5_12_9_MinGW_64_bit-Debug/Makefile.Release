@@ -241,6 +241,8 @@ release/moc_mainwindow.cpp: ../Practica6/mainwindow.h \
 		C:/Qt/5.12.9/mingw73_64/include/QtWidgets/QGraphicsScene \
 		C:/Qt/5.12.9/mingw73_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/5.12.9/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/5.12.9/mingw73_64/include/QtCore/QString \
+		C:/Qt/5.12.9/mingw73_64/include/QtCore/QMap \
 		../Practica6/objetos.h \
 		C:/Qt/5.12.9/mingw73_64/include/QtCore/QObject \
 		C:/Qt/5.12.9/mingw73_64/include/QtWidgets/QGraphicsPixmapItem \
@@ -389,6 +391,8 @@ release/main.o: ../Practica6/main.cpp ../Practica6/mainwindow.h \
 		C:/Qt/5.12.9/mingw73_64/include/QtWidgets/QGraphicsScene \
 		C:/Qt/5.12.9/mingw73_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/5.12.9/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/5.12.9/mingw73_64/include/QtCore/QString \
+		C:/Qt/5.12.9/mingw73_64/include/QtCore/QMap \
 		../Practica6/objetos.h \
 		C:/Qt/5.12.9/mingw73_64/include/QtCore/QObject \
 		C:/Qt/5.12.9/mingw73_64/include/QtWidgets/QGraphicsPixmapItem \
@@ -516,6 +520,8 @@ release/mainwindow.o: ../Practica6/mainwindow.cpp ../Practica6/mainwindow.h \
 		C:/Qt/5.12.9/mingw73_64/include/QtWidgets/QGraphicsScene \
 		C:/Qt/5.12.9/mingw73_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/5.12.9/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/5.12.9/mingw73_64/include/QtCore/QString \
+		C:/Qt/5.12.9/mingw73_64/include/QtCore/QMap \
 		../Practica6/objetos.h \
 		C:/Qt/5.12.9/mingw73_64/include/QtCore/QObject \
 		C:/Qt/5.12.9/mingw73_64/include/QtWidgets/QGraphicsPixmapItem \
